@@ -16,6 +16,8 @@ const operations = [
   [1, 1],
 ];
 
+
+
 const resetGrid = () =>
   Array.from({ length: numRows }).map(() =>
     Array.from({ length: numCols }).fill(0),
@@ -28,6 +30,41 @@ const seedGrid = () => {
   }
   return rows;
 };
+
+const lightWeight= ()=>{
+  const rows= Array.from({ length: numRows }).map(() =>
+  Array.from({ length: numCols }).fill(0),)
+  rows[20][21]=1
+  rows[20][22]=1
+  rows[20][23]=1
+  rows[20][24]=1
+  rows[21][24]=1
+  rows[22][24]=1
+  rows[23][23]=1
+  rows[21][20]=1
+  rows[23][20]=1
+  return rows
+}
+
+const TenCells= ()=>{
+  const rows= Array.from({ length: numRows }).map(() =>
+  Array.from({ length: numCols }).fill(0),)
+  rows[20][21]=1
+  rows[20][22]=1
+  rows[20][23]=1
+  rows[20][24]=1
+  rows[20][25]=1
+  rows[20][26]=1
+  rows[20][27]=1
+  rows[20][28]=1
+  rows[20][29]=1
+  rows[20][30]=1
+  return rows
+}
+
+
+
+
 
 const countNeighbors = (grid: any[][], x: number, y: number) => {
   return operations.reduce((acc, [i, j]) => {
@@ -110,7 +147,27 @@ const Body: FC = () => {
       >
         Seed
       </button>
-      <p>Generation: {generation}</p>
+      <button
+        onClick={() => {
+          setGrid(lightWeight());
+        }}
+        style={{
+            background: 'black',
+        }}
+      >
+        Lightweight Spaceship
+      </button>
+      <button
+        onClick={() => {
+          setGrid(TenCells());
+        }}
+        style={{
+            background: 'black',
+        }}
+      >
+        10 cells row
+      </button>
+      <p style={{color: 'black'}}>Generation: {generation}</p>
       <div
         style={{
           display: 'grid',

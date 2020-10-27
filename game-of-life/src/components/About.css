@@ -1,0 +1,19 @@
+.About h1 {
+    color: black;
+}
+.About h2{
+    color : black;
+}
+.About p{
+    color: black;
+}
+
+.About ul{
+    font-size: larger;
+}
+
+.surround{
+    background: lightblue;
+    margin: 1rem;
+    padding: 0.5rem;
+}
